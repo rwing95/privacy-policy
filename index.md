@@ -3,13 +3,13 @@
 
 **Effective Date:** April 16th 2026
 **Last Updated:** April 16th 2026 
-**Provider:** RWING INC
-**Contact:** [your-email@example.com]
+**Provider:** BB
+**Contact:** trueuser56@gmail.com
 
 ## 1. Introduction
 
 Banner Banger ("the App") is a mobile and web-based flag identification quiz game 
-developed and operated by [Your Company Name]. We are committed to protecting your 
+developed and operated by Banner Banger. We are committed to protecting your 
 privacy and ensuring transparency in how we collect and use information.
 
 This Privacy Policy explains our data practices for the App. By downloading, installing, 
@@ -181,14 +181,8 @@ this data cannot identify you personally.
   in the app's Settings > Account section
 
 **Delete Your Data:**
-- You can delete your entire account and associated data by emailing us at 
-  [your-email@example.com]. We will delete all personal information within 30 days.
-- Alternatively, uninstalling the app removes all local data; cloud-stored data 
-  is deleted after 90 days of inactivity
-
-**Opt Out of Analytics:**
-- You can disable analytics in the app's Settings > Privacy section
-- Note: This may limit our ability to improve the app based on your usage patterns
+- You can delete your entire account and associated data in app by going to settings and then Delete Account or by email. We will delete all personal information within 30 days.
+- Alternatively, uninstalling the app removes all local data;
 
 **Advertising Preferences:**
 - You can reset your Advertising ID and opt out of personalized ads via 
@@ -202,7 +196,7 @@ this data cannot identify you personally.
 If you are a resident of the EU, you have the following additional rights:
 - Right to access, rectification, erasure, and data portability
 - Right to object to processing on grounds of legitimate interest
-- Right to withdraw consent at any time (contact [your-email@example.com])
+- Right to withdraw consent at any time (contact trueuser56@gmail.com)
 - Right to lodge a complaint with your local data protection authority
 
 **CCPA (California):**
@@ -246,8 +240,7 @@ Continued use of the App after changes implies acceptance of the updated policy.
 ## 9. Contact Us & Your Rights
 
 **For Privacy Questions or Requests:**
-- Email: [your-email@example.com]
-- Mailing Address: [Your Business Address]
+- Email: trueuser56@gmail.com
 
 **For Data Subject Requests (GDPR/CCPA):**
 - You may request access, correction, or deletion of your personal data
