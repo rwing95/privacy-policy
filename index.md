@@ -9,7 +9,7 @@
 ## 1. Introduction
 
 Banner Banger ("the App") is a mobile and web-based flag identification quiz game 
-developed and operated by Banner Banger. We are committed to protecting your 
+~~developed and operated by Banner Banger~~. We are committed to protecting your 
 privacy and ensuring transparency in how we collect and use information.
 
 This Privacy Policy explains our data practices for the App. By downloading, installing, 
@@ -27,7 +27,7 @@ by this Privacy Policy. If you do not agree with our practices, do not use the A
   we may collect your name, email address, and profile picture to authenticate your 
   session and synchronize your progress.
 - Account information is stored securely and never shared with third parties without 
-  your consent.
+  your consent *(cite this claim)*.
 
 **Feedback & Support:**
 - If you contact us via in-app feedback, email, or support channels, we collect 
@@ -50,7 +50,7 @@ by this Privacy Policy. If you do not agree with our practices, do not use the A
 - Timestamps of app sessions
 
 **Error & Crash Logs:**
-- If your app crashes or encounters an error, we automatically collect:
+- If your app crashes or encounters an error, we automatically collect *(WOW - really?)*:
   - Stack traces and exception details
   - The screen you were on when the error occurred
   - Device state information (available memory, battery level)
@@ -62,7 +62,7 @@ by this Privacy Policy. If you do not agree with our practices, do not use the A
 
 ### 2.3 Information NOT Collected
 
-Banner Banger **does not** collect or request:
+*Decision: "We" or "Banner Banger"* **does not** collect or request:
 - Your legal name (unless you voluntarily provide it via account creation)
 - Phone number
 - Physical home address or precise GPS location
@@ -104,7 +104,7 @@ Banner Banger **does not** collect or request:
 - You can unsubscribe from marketing emails at any time via a link in the email
 
 **Third-Party Analytics** (if enabled):
-- We use [Expo Analytics / Firebase Analytics / Other] to track aggregate usage patterns
+- We use [Expo Analytics / Firebase Analytics / Other] to track aggregate usage patterns *(What's the "Other"?)*
 - This service may retain your data according to its privacy policy (see links below)
 
 ---
@@ -141,6 +141,8 @@ the App and for the specific purposes outlined in this policy.
 Aggregated, anonymized analytics may be shared in reports with stakeholders, but 
 this data cannot identify you personally.
 
+*(Comment about your gamer name on Leaderboards?)*
+
 ---
 
 ## 5. Data Security & Retention
@@ -149,7 +151,7 @@ this data cannot identify you personally.
 
 **Data in Transit:**
 - All communication between your device and our servers uses HTTPS encryption (TLS 1.2 or higher)
-- This prevents interception of your data during transmission
+~~- This prevents interception of your data during transmission~~
 
 **Data at Rest:**
 - User account information is stored in encrypted databases
@@ -213,7 +215,7 @@ If you are a California resident:
 Banner Banger is designed for users ages 10 and up. We comply with the 
 Children's Online Privacy Protection Act (COPPA) and similar regulations.
 
-**Our Practices:**
+**Our Practices:** .... *How is this all accomplished?*
 - We do **not** knowingly collect personal information from children under 13 
   without verifiable parental consent
 - We do **not** use persistent device identifiers for children under 13
