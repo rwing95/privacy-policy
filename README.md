@@ -1,101 +1,90 @@
 # Steam Companion
 
-A mobile app (Flutter) with a lightweight Node.js backend that lets you sign in with your Steam account and browse your game library, wishlist, and profile stats — without opening the Steam app.
+A Flutter mobile app (iOS + Android) with a Node.js backend that lets you sign into your Steam account and browse your game library, wishlist, and profile stats — without opening the Steam app.
 
 ---
 
-## Features
+## Quickstart
 
-- **Steam OpenID login** — sign in securely via the official Steam login page
-- **Game Library** — browse all owned games sorted by playtime, with grid and list views, and search
-- **Game Stats** — per-game: total playtime, recent playtime (last 2 weeks), last played date, achievement progress
-- **Achievements** — unlocked vs locked achievements with unlock dates
-- **Wishlist** — view your full wishlist with review scores, release dates, and priority ranking
-- **Profile** — avatar, status, total hours, most-played game, member since date
-- **Steam-themed dark UI** matching the Steam aesthetic
-
----
-
-## Project Structure
-
-```
-steam_backend/     Node.js + Express backend (Steam OpenID + API proxy)
-steam_app/         Flutter mobile app (iOS + Android)
-```
-
----
-
-## Setup
-
-### 1. Backend
+**Prerequisites:** [Node.js](https://nodejs.org) and [Flutter SDK](https://flutter.dev/docs/get-started/install)
 
 ```bash
-cd steam_backend
-npm install
-cp .env.example .env
-# Edit .env — set BACKEND_URL to your machine's reachable address
-node src/index.js
+git clone https://github.com/rwing95/steam-companion.git
+cd steam-companion
+./setup.sh      # one-time setup — creates Flutter project, installs all deps
+./start.sh      # starts backend + launches app
 ```
 
-The backend runs on port `3000` by default.
-
-**Finding your local IP (for real device testing):**
-- macOS/Linux: `ifconfig | grep "inet "`
-- Windows: `ipconfig`
-
-### 2. Flutter App
-
-**Prerequisites:** Flutter SDK installed ([flutter.dev](https://flutter.dev/docs/get-started/install))
-
-```bash
-cd steam_app
-flutter pub get
-flutter run
-```
-
-On first launch, tap **"Configure backend URL"** on the login screen and set the address:
-- Android emulator → `http://10.0.2.2:3000`
-- iOS simulator → `http://localhost:3000`
-- Real device → `http://<your-machine-ip>:3000`
-
-### 3. Steam Web API Key (for library & profile data)
-
-1. Visit [steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey) (free, instant)
-2. Open the app → **Settings** tab → paste your key → **Save Settings**
-
-The wishlist works without an API key (it uses Steam's public store endpoint).
+That's it. The setup script handles everything automatically.
 
 ---
 
-## Authentication Flow
+## What `setup.sh` does
 
-```
-App → Backend /auth/steam
-   → Steam OpenID login page
-   → Backend /auth/steam/return  (verifies the OpenID response)
-   → steamcompanion://auth/callback?steamId=XXXXX
-   → App intercepts redirect in WebView → logs in
-```
+1. Checks Node.js and Flutter are installed
+2. Installs backend npm packages
+3. Runs `flutter create` to generate the Android/iOS native scaffold
+4. Copies the app source files into the scaffold
+5. Runs `flutter pub get`
+6. Patches the Android manifest with the required internet permission
 
 ---
 
-## Android Permissions
+## After setup — Steam API Key
 
-In `android/app/src/main/AndroidManifest.xml`, ensure this is present inside `<manifest>`:
+The wishlist works immediately (no key needed). For your **library, achievements, and profile** you need a free Steam Web API key:
 
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
+1. Visit [steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey)
+2. In the app → **Settings** tab → paste your key → **Save**
+
+---
+
+## Running on a real device
+
+Edit `backend/.env` and set `BACKEND_URL` to your machine's local IP:
+
+```
+BACKEND_URL=http://192.168.1.x:3000
+```
+
+Then in the app's login screen tap **"Configure backend URL"** and set the same address.  
+(Android emulator uses `http://10.0.2.2:3000` · iOS simulator uses `http://localhost:3000`)
+
+---
+
+## Project structure
+
+```
+backend/          Node.js + Express (Steam OpenID auth + Steam API proxy)
+app/              Flutter source (lib/, pubspec.yaml, assets/)
+flutter_app/      Generated Flutter project (created by setup.sh)
+setup.sh          One-time setup script
+start.sh          Start backend + app together
+start_backend.sh  Start backend only
+start_app.sh      Start Flutter app only
 ```
 
 ---
 
 ## Screens
 
-| Screen | Description |
-|--------|-------------|
+| Screen | What it shows |
+|--------|---------------|
 | Login | Steam OpenID via in-app WebView |
-| Library | Owned games grid/list with search & sort |
-| Game Detail | Per-game stats, playtime, achievements |
-| Wishlist | Prioritized wishlist with reviews & release dates |
-| Profile | Avatar, stats overview, most-played game |
+| Library | All owned games — grid/list, search, sort by playtime/name/recent |
+| Game Detail | Total playtime · recent hours · last played date · achievements |
+| Wishlist | Full wishlist with review scores, release dates, priority rank |
+| Profile | Avatar, status, total hours, most-played game, member since |
 | Settings | API key, backend URL, sign out |
+
+---
+
+## Authentication flow
+
+```
+App → backend /auth/steam
+    → Steam OpenID login page
+    → backend /auth/steam/return  (verifies response)
+    → steamcompanion://auth/callback?steamId=XXXXX
+    → App intercepts in WebView → signed in
+```
